@@ -1,0 +1,264 @@
+{
+    "shows": [
+        {
+            "showid": "1", 
+            "numberofreviews": "158", 
+            "description": "A woman who moves into an apartment across the hall from two brilliant but socially awkward physicist shows them how little they know about life outside of the laboratory.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "1", 
+                "genrename": "comedy"
+            }, 
+            "actors": [
+                {
+                    "actorid": "1", 
+                    "actorname": "Jim Parsons"
+                }, 
+                {
+                    "actorid": "2", 
+                    "actorname": "Kaley Cuoco"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "The big bang theory", 
+            "averagerating": "3"
+        }, 
+        {
+            "showid": "2", 
+            "numberofreviews": "100", 
+            "description": "After being struck by lightning, Barry Allen weaks up from his coma to discover he has been given the power of super speed, becoming the next Flash, fighting crime in Central City.", 
+            "isdiscontinued": "f", 
+            "genre": {
+                "genreid": "3", 
+                "genrename": "superhero"
+            }, 
+            "actors": [
+                {
+                    "actorid": "3", 
+                    "actorname": "Grant Gustin"
+                }, 
+                {
+                    "actorid": "4", 
+                    "actorname": "Cardice Patton"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "The Flash", 
+            "averagerating": "3"
+        }, 
+        {
+            "showid": "3", 
+            "numberofreviews": "4279", 
+            "description": "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "4", 
+                "genrename": "science fiction"
+            }, 
+            "actors": [
+                {
+                    "actorid": "5", 
+                    "actorname": "Finn Wolfhard"
+                }, 
+                {
+                    "actorid": "6", 
+                    "actorname": "Winona Ryder"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "Stranger Things", 
+            "averagerating": "2"
+        }, 
+        {
+            "showid": "4", 
+            "numberofreviews": "414", 
+            "description": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "3", 
+                "genrename": "superhero"
+            }, 
+            "actors": [
+                {
+                    "actorid": "7", 
+                    "actorname": "David Ramsey"
+                }, 
+                {
+                    "actorid": "8", 
+                    "actorname": "Katie Cassidy"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "Arrow", 
+            "averagerating": "3"
+        }, 
+        {
+            "showid": "5", 
+            "numberofreviews": "70", 
+            "description": "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family future.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "6", 
+                "genrename": "crime"
+            }, 
+            "actors": [
+                {
+                    "actorid": "9", 
+                    "actorname": "Aaron Paul"
+                }, 
+                {
+                    "actorid": "10", 
+                    "actorname": "Anna Gunn"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "Breaking Bad", 
+            "averagerating": "3"
+        }, 
+        {
+            "showid": "6", 
+            "numberofreviews": "6", 
+            "description": "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.", 
+            "isdiscontinued": "f", 
+            "genre": {
+                "genreid": "2", 
+                "genrename": "animated"
+            }, 
+            "actors": [
+                {
+                    "actorid": "11", 
+                    "actorname": "Justin Roiland"
+                }, 
+                {
+                    "actorid": "12", 
+                    "actorname": "Spencer Grammer"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "Rick And Morty", 
+            "averagerating": "4"
+        }, 
+        {
+            "showid": "7", 
+            "numberofreviews": "1", 
+            "description": "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "5", 
+                "genrename": "drama"
+            }, 
+            "actors": [
+                {
+                    "actorid": "13", 
+                    "actorname": "Michel Gill"
+                }, 
+                {
+                    "actorid": "14", 
+                    "actorname": "Kevin Spacey"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "House Of Cards", 
+            "averagerating": "3"
+        }, 
+        {
+            "showid": "8", 
+            "numberofreviews": "1", 
+            "description": "An antisocial maverick doctor who specializes in diagnostic medicine does whatever it takes to solve puzzling cases that come his way using his crack team of doctors and his wits.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "5", 
+                "genrename": "drama"
+            }, 
+            "actors": [
+                {
+                    "actorid": "15", 
+                    "actorname": "Hugh Laurice"
+                }, 
+                {
+                    "actorid": "16", 
+                    "actorname": "Omar Epps"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "House M.D.", 
+            "averagerating": "4"
+        }, 
+        {
+            "showid": "9", 
+            "numberofreviews": "4", 
+            "description": "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.", 
+            "isdiscontinued": "f", 
+            "genre": {
+                "genreid": "2", 
+                "genrename": "animated"
+            }, 
+            "actors": [
+                {
+                    "actorid": "17", 
+                    "actorname": "Trey Parker"
+                }, 
+                {
+                    "actorid": "18", 
+                    "actorname": "Matt Stone"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "South Park", 
+            "averagerating": "1"
+        }, 
+        {
+            "showid": "10", 
+            "numberofreviews": "6", 
+            "description": "In a wacky Rhode Island town, a dysfunctional family strive to cope with everyday life as they are thrown from one crazy scenario to another.", 
+            "isdiscontinued": "f", 
+            "genre": {
+                "genreid": "2", 
+                "genrename": "animated"
+            }, 
+            "actors": [
+                {
+                    "actorid": "19", 
+                    "actorname": "Alex Bonstein"
+                }, 
+                {
+                    "actorid": "20", 
+                    "actorname": "Seth Green"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "Family Guy", 
+            "averagerating": "3"
+        }
+    ]
+}
