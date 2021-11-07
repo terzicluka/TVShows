@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVShows</title>
+    <meta name="description" content="Web page with open data about TVShows">
+    <meta name="keywords" content="TVShows, TV, shows, open, data, free, actor, actors, show">
+    <meta name="author" content="Luka Terzić">
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TVShows</h1>
+    <h3>In this page you can download the csv and json file from the github repository</h3>
+    <h3>Author: Luka Terzić</h3>
+    <p>You can download the data from this links:</p>
+    <div>
+        <a href="/TVShows.csv">CSV File from computer</a>
+    </div>
+    <div>
+        <a href="/TVShows.json">JSON File from computer</a>
+    </div>
+    <h2>License</h2>
+    <p>
+        This software has an MIT license which is a permissive free software license originating from MIT. You can read more about the license in the license file in this repository but if you are lazy you can read a little bit about it here as a quick sumary:
+    </p>
+    <p>
+        <i>
+            A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. 
+        </i>
+    </p>
+
+    <h2>Language</h2>
+    <p>The language that the data is provided in is English.</p>
+    
+    <h2>CSV</h2>
+    <p>
+        The CSV file has a delimiter ',' and has 12 columns. An example of one row in the csv file is:  
+    </p>
+    <table>
+        <tr>
+          <th>countryid</th>
+          <th>genreid</th>
+          <th>actorid</th>
+          <th>showid</th>
+          <th>showname</th>
+          <th>description</th>
+          <th>numberofreviews</th>
+          <th>averagerating</th>
+          <th>isdiscontinued</th>
+          <th>actorname</th>
+          <th>genrename</th>
+          <th>countryname</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>3</td>
+          <td>3</td>
+          <td>1</td>
+          <td>The Flash</td>
+          <td>A fast man</td>
+          <td>100</td>
+          <td>3</td>
+          <td>f</td>
+          <td>Grant Gustin</td>
+          <td>superhero</td>
+          <td>US</td>
+        </tr>
+    </table>
+    <p>
+        One TV Show can have multiple actors. The way this is implemented in the CSV file is that we repeat the occurrence of the show for the number of times that the show has actors in the data set. For example, if we have 2 actors in a show in our data set (Kaley Cuoco and Jim Parsons) the CSV representation will be:
+    </p>
+    <p>
+        1,1,1,1,The big bang theory,A woman who moves into an apartment across the hall from two brilliant but socially awkward physicist shows them how little they know about life outside of the laboratory.,158,3,t,Jim Parsons,comedy,US
+    </p>
+    <p>
+        1,1,2,1,The big bang theory,A woman who moves into an apartment across the hall from two brilliant but socially awkward physicist shows them how little they know about life outside of the laboratory.,158,3,t,Kaley Cuoco,comedy,US
+    </p>
+    <p>
+        The id's are here for possible future queries in the database since they are the primary keys of the data set. 
+    </p>
+
+    <h2>JSON</h2>
+    <p>The JSON file is best to bee seen on an example that has 2 shows.</p>
+    <pre>
+    <code>
+{
+    "shows": [
+        {
+            "showid": "1", 
+            "numberofreviews": "158", 
+            "description": "A woman who moves into an apartment across the hall from two brilliant but socially awkward physicist shows them how little they know about life outside of the laboratory.", 
+            "isdiscontinued": "t", 
+            "genre": {
+                "genreid": "1", 
+                "genrename": "comedy"
+            }, 
+            "actors": [
+                {
+                    "actorid": "1", 
+                    "actorname": "Jim Parsons"
+                }, 
+                {
+                    "actorid": "2", 
+                    "actorname": "Kaley Cuoco"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "The big bang theory", 
+            "averagerating": "3"
+        }, 
+        {
+            "showid": "2", 
+            "numberofreviews": "100", 
+            "description": "After being struck by lightning, Barry Allen weaks up from his coma to discover he has been given the power of super speed, becoming the next Flash, fighting crime in Central City.", 
+            "isdiscontinued": "f", 
+            "genre": {
+                "genreid": "3", 
+                "genrename": "superhero"
+            }, 
+            "actors": [
+                {
+                    "actorid": "3", 
+                    "actorname": "Grant Gustin"
+                }, 
+                {
+                    "actorid": "4", 
+                    "actorname": "Cardice Patton"
+                }
+            ], 
+            "country": {
+                "countryname": "US", 
+                "countryid": "1"
+            }, 
+            "showname": "The Flash", 
+            "averagerating": "3"
+        }, 
+    ]
+}        
+    </code>
+    </pre>
+    <p>
+        The atributes are mostly the same as in the CSV file and they are all self documenting. The only difference is that we can get clearer nesting in a JSON that provides better understing and semantics of data. For example we have added a new key "actores" that has a value of an array of actors. We did the same for country and genre which provides the user of the JSON a better understanding of the content that is provided.
+    </p>
+</body>
+
+</html>
