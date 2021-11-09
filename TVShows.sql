@@ -5,7 +5,7 @@
 -- Dumped from database version 14.0
 -- Dumped by pg_dump version 14.0
 
--- Started on 2021-10-24 21:44:41 CEST
+-- Started on 2021-11-09 01:11:21 CET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -87,7 +87,7 @@ CREATE TABLE public.shows (
     averagerating integer,
     genreid integer,
     countryid integer,
-    isdiscontinued boolean
+    isdiscontinued "char"
 );
 
 
@@ -187,14 +187,14 @@ COPY public.showactor (showid, actorid) FROM stdin;
 --
 
 COPY public.shows (showid, showname, description, numberofreviews, averagerating, genreid, countryid, isdiscontinued) FROM stdin;
-1	The big bang theory	A woman who moves into an apartment across the hall from two brilliant but socially awkward physicist shows them how little they know about life outside of the laboratory.	158	3	1	1	t
-2	The Flash	After being struck by lightning, Barry Allen weaks up from his coma to discover he has been given the power of super speed, becoming the next Flash, fighting crime in Central City.	100	3	3	1	f
 3	Stranger Things	When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.	4279	2	4	1	t
 4	Arrow	Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.	414	3	3	1	t
 5	Breaking Bad	A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family future.	70	3	6	1	t
-6	Rick And Morty	An animated series that follows the exploits of a super scientist and his not-so-bright grandson.	6	4	2	1	f
 7	House Of Cards	A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.	1	3	5	1	t
 8	House M.D.	An antisocial maverick doctor who specializes in diagnostic medicine does whatever it takes to solve puzzling cases that come his way using his crack team of doctors and his wits.	1	4	5	1	t
+1	The big bang theory	A woman who moves into an apartment across the hall from two brilliant but socially awkward physicist shows them how little they know about life outside of the laboratory.	158	3	1	1	t
+2	The Flash	After being struck by lightning, Barry Allen weaks up from his coma to discover he has been given the power of super speed, becoming the next Flash, fighting crime in Central City.	100	3	3	1	f
+6	Rick And Morty	An animated series that follows the exploits of a super scientist and his not-so-bright grandson.	6	4	2	1	f
 9	South Park	Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.	4	1	2	1	f
 10	Family Guy	In a wacky Rhode Island town, a dysfunctional family strive to cope with everyday life as they are thrown from one crazy scenario to another.	6	3	2	1	f
 \.
@@ -281,7 +281,7 @@ ALTER TABLE ONLY public.shows
     ADD CONSTRAINT shows_genreid_fkey FOREIGN KEY (genreid) REFERENCES public.genre(genreid);
 
 
--- Completed on 2021-10-24 21:44:42 CEST
+-- Completed on 2021-11-09 01:11:22 CET
 
 --
 -- PostgreSQL database dump complete
