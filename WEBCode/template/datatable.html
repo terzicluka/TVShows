@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVShows</title>
+    <meta name="description" content="Web page with open data about TVShows">
+    <meta name="keywords" content="TVShows, TV, shows, open, data, free, actor, actors, show">
+    <meta name="author" content="Luka Terzić">
+
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+  </style>
+
+</head>
+
+<body>
+  <h2>Filter the data that is being shown in the table</h2>
+  <form method="POST" action="/search">
+    <label for="fname">Field for search</label><br>
+    <input type="text" id="search" name="search"><br>
+    <select id="searchOption" name="searchOption">
+      <option value="wildcard" selected>wildcard</option>
+      <option value="showname">showname</option>
+      <option value="averagerating">averagerating</option>
+      <option value="isdiscontinued">isdiscontinued</option>
+      <option value="genrename">genrename</option>
+      <option value="countryname">countryname</option>
+    </select>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+    
+  </form>
+	<h2>In this section you can download the data that is displayed in the table as CSV and JSON </h2>
+    <table>
+        <tr>
+          <th>showname</th>
+          <th>averagerating</th>
+          <th>isdiscontinued</th>
+          <th>genrename</th>
+          <th>countryname</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div>
+      <span>Download the CSV file:</span>
+      <button onclick="downloadCurrentCSV()">Download</button>
+    </div>
+    <div>
+      <span>Download the JSON file:</span>
+      <button onclick="downloadCurrentJSON()">Download</button>
+    </div>
+
+<script>
+
+  function downloadCurrentJSON() {
+    url = '/download/JSON'
+    fetch(url)
+      .then( res => res.blob() )
+      .then( blob => {
+        var file = window.URL.createObjectURL(blob);
+        window.location.assign(file);
+    });
+  }
+
+  function downloadCurrentCSV() {
+    url = '/download/CSV'
+    fetch(url)
+      .then( res => res.blob() )
+      .then( blob => {
+        var file = window.URL.createObjectURL(blob);
+        window.location.assign(file);
+    });
+  }
+
+  function filterData() {
+
+  }
+
+</script>
+</body>
+
+</html>

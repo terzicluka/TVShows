@@ -4,7 +4,7 @@ import json
 
 def convert_csv_to_json():
     csv_file = open(
-        "/Users/lukaterzic/Documents/FER/or-labosi/TVShows/Backend/TVShows.csv", "r")
+        "/Users/lukaterzic/Documents/FER/or-labosi/TVShows/WEBCode/TVShows.csv", "r")
     reader = csv.reader(csv_file)
     next(reader)
     data = []
@@ -58,11 +58,10 @@ def convert_csv_to_json():
             actorid = []
             actorname = []
             counter += 1
-    print(data)
     csv_file.close()
 
     json_file = open(
-        "/Users/lukaterzic/Documents/FER/or-labosi/TVShows/Backend/TVShows.json", "w")
+        "/Users/lukaterzic/Documents/FER/or-labosi/TVShows/WEBCode/TVShows.json", "w")
     json.dump({"shows": data}, json_file, indent=4)
     json_file.close()
-    return json.dumps({"shows": data})
+    # return json.dumps({"shows": data})

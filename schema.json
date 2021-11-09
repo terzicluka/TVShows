@@ -1,0 +1,116 @@
+{
+    "$id": "/TVShows.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "TVShows",
+    "description": "Set of TVShows for open computing",
+    "properties": {
+      "shows": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "showid": {
+                "type": "string"
+              },
+              "numberofreviews": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "isdiscontinued": {
+                "type": "string"
+              },
+              "genre": {
+                "type": "object",
+                "properties": {
+                  "genreid": {
+                    "type": "string"
+                  },
+                  "genrename": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "genreid",
+                  "genrename"
+                ]
+              },
+              "actors": {
+                "type": "array",
+                "items": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "actorid": {
+                        "type": "string"
+                      },
+                      "actorname": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "actorid",
+                      "actorname"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "actorid": {
+                        "type": "string"
+                      },
+                      "actorname": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "actorid",
+                      "actorname"
+                    ]
+                  }
+                ]
+              },
+              "country": {
+                "type": "object",
+                "properties": {
+                  "countryname": {
+                    "type": "string"
+                  },
+                  "countryid": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "countryname",
+                  "countryid"
+                ]
+              },
+              "showname": {
+                "type": "string"
+              },
+              "averagerating": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "showid",
+              "numberofreviews",
+              "description",
+              "isdiscontinued",
+              "genre",
+              "actors",
+              "country",
+              "showname",
+              "averagerating"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "shows"
+    ]
+  }
