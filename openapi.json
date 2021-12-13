@@ -1,0 +1,304 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [{
+        "url": "http://localhost:8080",
+        "description": "Generated server url"
+    }],
+    "paths": {
+        "/TVShows/v1/actor": {
+            "get": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "getActorFromActorId",
+                "parameters": [{
+                    "name": "actorId",
+                    "in": "query",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Actor"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "updateActor",
+                "parameters": [{
+                    "name": "actorId",
+                    "in": "query",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Actor"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "addActor",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Actor"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Actor"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TVShows/v1/shows": {
+            "get": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "getShows",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/ShowsResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TVShows/v1/shows/discontinued": {
+            "get": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "getDiscontinuedShows",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/ShowsResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TVShows/v1/show": {
+            "get": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "getShowFromShowId",
+                "parameters": [{
+                    "name": "showId",
+                    "in": "query",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ShowsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TVShows/v1/genres": {
+            "get": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "getGenres",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Genre"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TVShows/v1/delete/show": {
+            "delete": {
+                "tags": [
+                    "tv-shows-controller"
+                ],
+                "operationId": "deleteShow",
+                "parameters": [{
+                    "name": "showId",
+                    "in": "query",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Actor": {
+                "type": "object",
+                "properties": {
+                    "actorId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "actorName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Country": {
+                "type": "object",
+                "properties": {
+                    "countryId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "countryName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Genre": {
+                "type": "object",
+                "properties": {
+                    "genreId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "genreName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ShowsResponse": {
+                "type": "object",
+                "properties": {
+                    "showId": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "numberOfReviews": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "isDiscontinued": {
+                        "type": "string"
+                    },
+                    "genre": {
+                        "$ref": "#/components/schemas/Genre"
+                    },
+                    "actors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Actor"
+                        }
+                    },
+                    "country": {
+                        "$ref": "#/components/schemas/Country"
+                    },
+                    "showName": {
+                        "type": "string"
+                    },
+                    "averageRating": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            }
+        }
+    }
+}
